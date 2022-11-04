@@ -26,7 +26,7 @@ Once all of the dependencies have been installed you can launch the development 
 
 A new browser window should automatically open displaying the app.  If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser
 
-![Home Screen](src/screenshot/home.png "Home Screen")
+![Home Page](src/screenshot/home.png "Home Screen")
 
 ## How to Use the App
 * Books are sorted into three categories:
@@ -38,7 +38,7 @@ A new browser window should automatically open displaying the app.  If it doesn'
 
 
 
-![Search Result](src/screenshot/search.png "Search Results Books")
+![Search Page](src/screenshot/search.png "Search Results Books")
 
 
 *Note: The backend API is limited to a fixed set of [search terms](#search-terms)  -- see below for valid search options*
