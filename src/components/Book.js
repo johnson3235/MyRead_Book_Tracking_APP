@@ -1,49 +1,47 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import BookShelfChanger from './BookShelfChanger.js'
+import noThumbnailImage from '../icons/no_cover_thumb.gif'
 
-/* 
-	Book.js
-	React component for an individual book in myReads Book Tracker App
-	Author: Steve Prager
-*/
+// Stateless functional component is used as we are using only render method.
+const Book = (props) => {
+    const {book,onChangeShelf} = props
+    return(
+        <li>
+            <div className="book">
+                <div className="book-top">
+                    <div className="book-cover"
+                             style={{
+                                        width: 128,
+                                        height: 193,
+                                        backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : noThumbnailImage})` }}>
+                        </div>
+                        <div className="book-shelf-changer">
+                            <select
+                                onChange={(event) => onChangeShelf(book,event.target.value)}
+                                value={book.shelf ? book.shelf : 'none'}>
+                                <option value="moveTo" disabled>Move to...</option>
+                                <option value="currentlyReading">Currently Reading</option>
+                                <option value="wantToRead">Want to Read</option>
+                                <option value="read">Read</option>
+                                <option value="none">Remove</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="book-title">{book.title ? book.title : null}</div>
+                    { 
+                        book.authors &&
+                        book.authors.map((author,index) =>(
+                        <div className="book-authors" key={index}>{author}</div>
+                    ))}
+            </div>
+        </li>
+    )
+}
 
-class Book extends React.Component {
 
-    /* Book required props */
-	static propTypes = {
-		onUpdateShelf: PropTypes.func.isRequired,
-		bookItem: PropTypes.object.isRequired
-	}
-
-	render() {
-
-		const { bookItem, onUpdateShelf } = this.props
-
-		return <li>
-				   <div className="book">
-				       <div className="book-top">
-				           <div className="book-cover" 
-					            style={{ width: 128, 
-				           	             height: 192, 
-				           	             /* Use the background image as thumbnail, but only if there IS one */
-				           	             backgroundImage:((bookItem.imageLinks && bookItem.imageLinks.smallThumbnail) ? 
-				           	                               `url(${bookItem.imageLinks.smallThumbnail})` : "none")}}></div>
-	                       <BookShelfChanger
-		                       onUpdateShelf={onUpdateShelf}
-		                       shelf={bookItem.shelf}
-		                       bookItem={bookItem}
-	                        />
-	                   </div>
-	                   <div className="book-title">{bookItem.title}</div>
-	                   <div className="book-authors">
-		                   {/*If there's more than one author, join the array of names appropriately*/}
-		                   {(bookItem.authors && bookItem.authors.length) > 1 ? 
-		                    bookItem.authors.join(", ") : bookItem.authors}
-	                   </div>
-	               </div>
-               </li> 
-    }
+Book.PropTypes = {
+    book: PropTypes.object.isRequired,
+    onChangeShelf: PropTypes.func.isRequired
 }
 
 export default Book
