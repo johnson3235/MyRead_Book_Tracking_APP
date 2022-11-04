@@ -4,6 +4,7 @@
 MyRead_Book_Tracking_APP this course Do to Fwd React Cross Worker
 
 
+
 ## Project Purpose:
 
 MyReads is a bookshelf app that allows us to select and categorize books that we have read, currently reading, or want to read. The project emphasizes using React Fundamentals to build the application and provides an API server and client library to persist information as we interact with the application.
@@ -43,4 +44,5 @@ A new browser window should automatically open displaying the app.  If it doesn'
 *Note: The backend API is limited to a fixed set of [search terms](#search-terms)  -- see below for valid search options*
 #### Search Terms
 'Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 'Baseball', 'Basketball', 'Bhagat', 'Biography', 'Brief', 'Business', 'Camus', 'Cervantes', 'Christie', 'Classics', 'Comics', 'Cook', 'Cricket', 'Cycling', 'Desai', 'Design', 'Development', 'Digital Marketing', 'Drama', 'Drawing', 'Dumas', 'Education', 'Everything', 'Fantasy', 'Film', 'Finance', 'First', 'Fitness', 'Football', 'Future', 'Games', 'Gandhi', 'Homer', 'Horror', 'Hugo', 'Ibsen', 'Journey', 'Kafka', 'King', 'Lahiri', 'Larsson', 'Learn', 'Literary Fiction', 'Make', 'Manage', 'Marquez', 'Money', 'Mystery', 'Negotiate', 'Painting', 'Philosophy', 'Photography', 'Poetry', 'Production', 'Programming', 'React', 'Redux', 'River', 'Robotics', 'Rowling', 'Satire', 'Science Fiction', 'Shakespeare', 'Singh', 'Swimming', 'Tale', 'Thrun', 'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality', 'Web Development', 'iOS'
+
 
